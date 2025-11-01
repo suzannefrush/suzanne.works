@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import InstagramIconColor from "@/components/Icons/InstagramIconColor";
 import LinkedInIconColor from "@/components/Icons/LinkedInIconColor";
-import XIconColor from "@/components/Icons/XIconColor";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -43,9 +42,6 @@ export default function ContactPage() {
             </a>
             <a href="https://linkedin.com/in/suzannefrush" target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <LinkedInIconColor className="h-8 w-8 transition-opacity hover:opacity-80" />
-            </a>
-            <a href="https://twitter.com/spfrush" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
-              <XIconColor className="h-8 w-8 transition-opacity hover:opacity-80" />
             </a>
           </div>
         </div>

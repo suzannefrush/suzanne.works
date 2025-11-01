@@ -1,6 +1,5 @@
 import InstagramIcon from "@/components/Icons/InstagramIcon";
 import LinkedInIcon from "@/components/Icons/LinkedInIcon";
-import XIcon from "@/components/Icons/XIcon";
 
 export default function Footer() {
   return (
@@ -30,15 +29,6 @@ export default function Footer() {
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon className="h-6 w-6" />
-              </a>
-              <a
-                href="https://twitter.com/spfrush"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
-                aria-label="X (Twitter)"
-              >
-                <XIcon className="h-6 w-6" />
               </a>
             </div>
           </div>
