@@ -1,6 +1,6 @@
 # Suzanne Frush dot works
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/integration/start/deploy?repository=<REPOSITORYURL>)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/integration/start/deploy?repository=https://github.com/suzannefrush/suzanne.works)
 
 ## Developing
 
