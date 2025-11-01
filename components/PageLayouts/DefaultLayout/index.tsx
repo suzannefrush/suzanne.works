@@ -1,3 +1,5 @@
+import Content from "../Content";
+import Footer from "../Footer";
 import Header from "../Header";
 
 interface DefaultLayoutProps {
@@ -6,9 +8,10 @@ interface DefaultLayoutProps {
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <main>
+    <>
       <Header />
-      <main className="pt-8">{children}</main>
-    </main>
+      <Content>{children}</Content>
+      <Footer />
+    </>
   );
 }

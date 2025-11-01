@@ -25,6 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/** Default Title */}
+        <title>Suzanne Frush | Product + Community</title>
+      </head>
       <body className={`${lato.variable} ${geistMono.variable} bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-white`}>{children}</body>
     </html>
   );

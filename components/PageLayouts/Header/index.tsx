@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -17,11 +17,21 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-white text-gray-700 dark:bg-gray-900 dark:text-white">
-      <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+    <header className={`sticky top-0 z-50 bg-white text-gray-700 transition-shadow duration-200 dark:bg-gray-900 dark:text-white ${isScrolled ? "shadow-md" : ""}`}>
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             {/* <span className="sr-only">Your Company</span> */}

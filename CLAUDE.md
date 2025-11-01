@@ -36,15 +36,13 @@ npx prettier --editorconfig --write --ignore-unknown <files>
 
 ## Architecture Overview
 
-This is a Next.js 15.5.4 application using the App Router architecture with TypeScript and Tailwind CSS v4.
+This is a Next.js 16 application using the App Router architecture with TypeScript and Tailwind CSS v4.
 
 ### Routing Structure
 
 The application uses Next.js App Router with route groups:
 
 - `app/layout.tsx` - Root layout that configures fonts (Lato, Geist Mono) and dark mode support
-- `app/(site)/layout.tsx` - Site layout wrapper that applies DefaultLayout to all site pages
-- `app/(site)/contact/page.tsx` - Contact page
 - Pages in the `(site)` route group automatically use the DefaultLayout component
 
 ### Layout System
@@ -60,7 +58,6 @@ The layout architecture uses a nested composition pattern:
 
 Components are organized by function:
 
-- `components/PageLayouts/` - Layout components (Header, DefaultLayout)
 - Path alias `@/*` maps to the project root
 
 ### Styling

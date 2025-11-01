@@ -1,6 +1,6 @@
+import Footer from "@/components/PageLayouts/Footer";
 import Header from "@/components/PageLayouts/Header";
 import { getImageProps } from "next/image";
-import Link from "next/link";
 
 function getBackgroundImage(srcSet = "") {
   const imageSet = srcSet
@@ -14,6 +14,8 @@ function getBackgroundImage(srcSet = "") {
 }
 
 export default function Home() {
+  // Next.js processes images at compile time, so we must run them through this code to generate the urls we need.
+  // We _could_ reference directly but we do want Next.js to have the opportunity to optimize image delivery
   const {
     props: { srcSet },
   } = getImageProps({ alt: "", width: 1024, height: 683, quality: 100, src: "/heading/hero.webp" });
@@ -21,9 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="text-white">
-        <Header />
-      </div>
+      <Header />
 
       <div className="relative isolate px-6 pt-14 lg:px-8" style={{ backgroundImage, backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="mx-auto max-w-4xl py-32">
@@ -37,6 +37,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* <Content>Additional Homepage Content</Content> */}
+      <Footer />
     </>
   );
 }
