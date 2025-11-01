@@ -67,6 +67,14 @@ Components are organized by function:
 - Custom CSS variables: `--background`, `--foreground`
 - Tailwind theme extends font families from Next.js font variables
 - EditorConfig enforces 2-space indentation and 180 character line length
+- **Dynamic ClassNames**: Use the `classnames` library (imported as `cx`) for conditional, concatenation, or dynamic className application
+
+  ```typescript
+  import cx from "classnames";
+
+  // Example usage:
+  <div className={cx("base-class", "concatenate", { "conditional-class": condition })} />
+  ```
 
 ### Key Dependencies
 

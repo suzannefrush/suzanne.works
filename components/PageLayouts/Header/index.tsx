@@ -2,7 +2,7 @@
 
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import cx from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 bg-white text-gray-700 transition-shadow duration-200 dark:bg-gray-900 dark:text-white ${isScrolled ? "shadow-md" : ""}`}>
+    <header className={cx("sticky top-0 z-50 bg-white text-gray-700 transition-shadow duration-200 dark:bg-gray-900 dark:text-white", { "shadow-md": isScrolled })}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -49,7 +49,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold text-gray-700 hover:underline aria-[current='page']:border-b-2 aria-[current='page']:border-b-red-700 dark:text-white"
+              className="text-sm font-semibold text-gray-700 hover:border-b-2 aria-[current='page']:border-b-2 aria-[current='page']:border-b-red-700 dark:text-white"
               aria-current={item.href === pathname ? "page" : undefined}
             >
               {item.name}
