@@ -44,7 +44,7 @@ export default function Home() {
       <section className="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background illustration */}
         <Image
-          src="/homepage-scene.jpg"
+          src="/homepage-illustration.jpeg"
           alt="Whimsical illustrated room with desk, suitcase, bookshelf, mailbox, and sleeping cat"
           fill
           className="object-cover"
