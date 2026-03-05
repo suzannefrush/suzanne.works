@@ -39,10 +39,9 @@ const hotspots = [
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ backgroundColor: "#faf7f2" }}>
       {/* Hero with illustration */}
       <section className="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background illustration */}
         <Image
           src="/homepage-illustration.jpeg"
           alt="Whimsical illustrated room with desk, suitcase, bookshelf, mailbox, and sleeping cat"
@@ -50,27 +49,29 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-white/20" />
-        {/* Floating hotspots */}
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-white/10" />
+
+        {/* Floating hotspots — desktop */}
         {hotspots.map((spot) => (
           <Link
             key={spot.path}
             href={spot.path}
-            className={`absolute ${spot.position} ${spot.animation} hidden md:flex flex-col items-center group`}
+            className={`absolute ${spot.position} ${spot.animation} hidden md:flex flex-col items-center group z-10`}
           >
             <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl px-5 py-4 shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:scale-110 group-hover:bg-white text-center">
               <spot.icon className="w-6 h-6 mx-auto mb-2 text-[#8B1A1A]" />
-              <span className="text-sm font-bold tracking-wide block">{spot.label}</span>
-              <span className="text-xs text-gray-500">{spot.description}</span>
+              <span className="text-sm font-bold tracking-wide block text-gray-900">{spot.label}</span>
+              <span className="text-xs text-gray-600">{spot.description}</span>
             </div>
           </Link>
         ))}
+
         {/* Center tagline — mobile only */}
         <div className="relative z-10 text-center px-6 md:hidden">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
             <p className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1 mb-4">HELLO!</p>
-            <h1 className="text-2xl font-bold leading-snug">
+            <h1 className="text-2xl font-bold leading-snug text-gray-900">
               I believe in the transformative power of getting things done (well).
             </h1>
           </div>
@@ -87,8 +88,8 @@ export default function Home() {
               className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-lg transition-all hover:border-[#8B1A1A]"
             >
               <spot.icon className="w-6 h-6 mx-auto mb-2 text-[#8B1A1A]" />
-              <span className="text-sm font-bold block">{spot.label}</span>
-              <span className="text-xs text-gray-500">{spot.description}</span>
+              <span className="text-sm font-bold block text-gray-900">{spot.label}</span>
+              <span className="text-xs text-gray-600">{spot.description}</span>
             </Link>
           ))}
         </div>
@@ -97,7 +98,7 @@ export default function Home() {
       {/* Tagline section — desktop */}
       <section className="hidden md:block text-center py-20 px-6">
         <p className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1 mb-6">HELLO!</p>
-        <h1 className="text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight text-gray-900">
           I believe in the transformative power of getting things done (well).
         </h1>
       </section>
