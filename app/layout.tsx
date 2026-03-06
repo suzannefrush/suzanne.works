@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Lato } from "next/font/google";
-import DefaultLayout from "@/components/PageLayouts/DefaultLayout";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const lato = Lato({
@@ -14,11 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Suzanne Frush | Product + Community",
-  description: "Product manager, traveler, maker.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,8 +25,10 @@ export default function RootLayout({
       <head>
         <title>Suzanne Frush | Product + Community</title>
       </head>
-      <body className={`${lato.variable} ${geistMono.variable} bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-white`}>
-        <DefaultLayout>{children}</DefaultLayout>
+      <body className={`${lato.variable} ${geistMono.variable} bg-white text-gray-900 antialiased`}>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
