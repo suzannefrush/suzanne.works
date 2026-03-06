@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Lato } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/PageLayouts/Header";
+import Footer from "@/components/PageLayouts/Footer";
 import "./globals.css";
 
 const lato = Lato({
