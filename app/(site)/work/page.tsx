@@ -85,7 +85,7 @@ export default function WorkPage() {
 
       <div className="space-y-0 divide-y divide-gray-200">
         {products.map((p) => (
-          
+           
             key={p.title}
             href={p.link}
             target="_blank"
