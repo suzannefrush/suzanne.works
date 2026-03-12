@@ -66,71 +66,37 @@ const mentions = [
 export default function WorkPage() {
   return (
     <div className="space-y-16 py-12">
-      {/* Header */}
       <div className="text-center">
-        <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">
-          GET DOWN TO BUSINESSS
-        </span>
+        <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">GET DOWN TO BUSINESSS</span>
       </div>
 
-      {/* Resume */}
       <div className="max-w-md mx-auto bg-white border border-gray-200 rounded-xl p-6 text-center">
         <p className="text-sm text-gray-500 mb-3">Suzanne Frush Resume (pdf)</p>
-        
-          href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"
-        >
-          <Download className="w-4 h-4" /> DOWNLOAD
-        href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"
-><Download className="w-4 h-4" /><span>DOWNLOAD</span></a>
+        <a href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"><Download className="w-4 h-4" /><span>DOWNLOAD</span></a>
       </div>
 
-      {/* Products */}
       <div className="space-y-8">
         <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">
-            PRODUCTS I'VE SHIPPED
-          </span>
+          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">PRODUCTS I'VE SHIPPED</span>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {products.map((p) => (
             <div key={p.title} className="bg-white border border-gray-200 rounded-xl p-6 space-y-3 hover:shadow-lg transition-shadow">
               <h3 className="text-lg font-bold text-gray-900">{p.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{p.description}</p>
-              
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase hover:opacity-90 transition-opacity"
-              >
-                {p.cta} <ExternalLink className="w-3 h-3" />
-              </a>
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase hover:opacity-90 transition-opacity"><span>{p.cta}</span><ExternalLink className="w-3 h-3" /></a>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Awards */}
       <div className="space-y-8">
         <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">
-            AWARDS
-          </span>
+          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">AWARDS</span>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {awards.map((a) => (
-            
-              key={a.title}
-              href={a.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block"
-            >
+            <a key={a.title} href={a.link} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block">
               <div className="flex items-start gap-3">
                 <Award className="w-8 h-8 text-[#8B1A1A] flex-shrink-0 mt-1" />
                 <div>
@@ -143,22 +109,13 @@ export default function WorkPage() {
         </div>
       </div>
 
-      {/* Mentions */}
       <div className="space-y-8 pb-12">
         <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">
-            MENTIONS
-          </span>
+          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">MENTIONS</span>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {mentions.map((m) => (
-            
-              key={m.title}
-              href={m.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block"
-            >
+            <a key={m.title} href={m.link} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block">
               <div className="flex items-start gap-3">
                 <Quote className="w-6 h-6 text-[#8B1A1A] flex-shrink-0 mt-1" />
                 <div>
