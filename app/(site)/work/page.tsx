@@ -1,4 +1,5 @@
-import { ExternalLink, Download, Award, Quote } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Download } from "lucide-react";
 
 const products = [
   {
@@ -6,24 +7,28 @@ const products = [
     description: "Recently announced as of March 2023, WhatsApp has been added in Braze's suite of omnichannel customer engagement tools.",
     cta: "What's up with WhatsApp?!",
     link: "https://www.braze.com/resources/articles/braze-announces-native-support-for-whatsapp",
+    image: "/placeholder.svg",
   },
   {
     title: "ALICE Housekeeping",
     description: "Launched in 2020, and led this product through the craziness of COVID (including all of our customers completely shutting down), ALICE Housekeeping was the last piece of the operations puzzle.",
     cta: "Tell Me More!",
     link: "https://www.aliceplatform.com/blog/tag/alice-housekeeping",
+    image: "/placeholder.svg",
   },
   {
     title: "Non Profit Websites",
     description: "With the help of the amazing organization 48in48, I led a team that within 48 hours had completely redesigned 2 nonprofit websites, starting from practically nothing.",
     cta: "See the Original",
     link: "https://web.archive.org/web/20161005174734/http://nassauperformingarts.org/",
+    image: "/placeholder.svg",
   },
   {
     title: "Interactive Classroom",
     description: "Lingo Live's first proprietary classroom was launched and iterated with my support and guidance. Within the first month of release, we had 31% of users voluntarily switch from other video platforms.",
     cta: "Read About It",
     link: "https://www.lingolive.com/lingo-live-unveils-interactive-classroom/",
+    image: "/placeholder.svg",
   },
 ];
 
@@ -65,64 +70,83 @@ const mentions = [
 
 export default function WorkPage() {
   return (
-    <div className="space-y-16 py-12">
-      <div className="text-center">
-        <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">GET DOWN TO BUSINESSS</span>
+    <div className="max-w-4xl mx-auto px-6 py-16 space-y-20">
+      <div className="flex items-end justify-between border-b border-gray-200 pb-6">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-none">
+          Products<br />Shipped
+        </h1>
+        
+          href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B1A1A] text-white text-sm font-medium hover:opacity-90 transition-all shadow-sm hover:shadow-md"
+        ><Download className="w-4 h-4" /><span>Resume</span></a>
       </div>
 
-      <div className="max-w-md mx-auto bg-white border border-gray-200 rounded-xl p-6 text-center">
-        <p className="text-sm text-gray-500 mb-3">Suzanne Frush Resume (pdf)</p>
-        <a href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"><Download className="w-4 h-4" /><span>DOWNLOAD</span></a>
-      </div>
-
-      <div className="space-y-8">
-        <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">PRODUCTS I'VE SHIPPED</span>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {products.map((p) => (
-            <div key={p.title} className="bg-white border border-gray-200 rounded-xl p-6 space-y-3 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-bold text-gray-900">{p.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{p.description}</p>
-              <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase hover:opacity-90 transition-opacity"><span>{p.cta}</span><ExternalLink className="w-3 h-3" /></a>
+      <div className="space-y-0 divide-y divide-gray-200">
+        {products.map((p) => (
+          
+            key={p.title}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col sm:flex-row gap-6 p-4 -mx-4 rounded-lg hover:bg-gray-50 transition-all duration-300"
+          >
+            <div className="sm:w-[280px] flex-shrink-0 overflow-hidden rounded-md">
+              <img
+                src={p.image}
+                alt={p.title}
+                className="w-full aspect-[16/10] object-cover bg-gray-100 group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
-          ))}
-        </div>
+            <div className="flex flex-col justify-center space-y-3 min-w-0">
+              <h2 className="text-xl font-bold group-hover:text-[#8B1A1A] transition-colors">{p.title}</h2>
+              <p className="text-sm text-gray-600 leading-relaxed">{p.description}</p>
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-[#8B1A1A] underline underline-offset-4">
+                {p.cta}<ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
 
-      <div className="space-y-8">
-        <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">AWARDS</span>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
+      <div className="space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Awards</h2>
+        <div className="divide-y divide-gray-200">
           {awards.map((a) => (
-            <a key={a.title} href={a.link} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block">
-              <div className="flex items-start gap-3">
-                <Award className="w-8 h-8 text-[#8B1A1A] flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#8B1A1A] transition-colors">{a.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1 leading-relaxed">{a.description}</p>
-                </div>
+            
+              key={a.title}
+              href={a.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start justify-between gap-4 py-5"
+            >
+              <div className="space-y-1 min-w-0">
+                <h3 className="font-bold group-hover:text-[#8B1A1A] transition-colors">{a.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{a.description}</p>
               </div>
+              <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-[#8B1A1A] transition-colors flex-shrink-0 mt-1" />
             </a>
           ))}
         </div>
       </div>
 
-      <div className="space-y-8 pb-12">
-        <div className="text-center">
-          <span className="text-xs font-semibold tracking-[0.2em] bg-black text-white inline-block px-3 py-1">MENTIONS</span>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
+      <div className="space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Mentions</h2>
+        <div className="divide-y divide-gray-200">
           {mentions.map((m) => (
-            <a key={m.title} href={m.link} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group block">
-              <div className="flex items-start gap-3">
-                <Quote className="w-6 h-6 text-[#8B1A1A] flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-[#8B1A1A] transition-colors">{m.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1 leading-relaxed">{m.description}</p>
-                </div>
+            
+              key={m.title}
+              href={m.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start justify-between gap-4 py-5"
+            >
+              <div className="space-y-1 min-w-0">
+                <h3 className="font-bold group-hover:text-[#8B1A1A] transition-colors">{m.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
               </div>
+              <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-[#8B1A1A] transition-colors flex-shrink-0 mt-1" />
             </a>
           ))}
         </div>
