@@ -83,7 +83,11 @@ export default function WorkPage() {
           className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"
         >
           <Download className="w-4 h-4" /> DOWNLOAD
-        </a>
+        href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 bg-[#8B1A1A] text-white px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"
+><Download className="w-4 h-4" /><span>DOWNLOAD</span></a>
       </div>
 
       {/* Products */}
