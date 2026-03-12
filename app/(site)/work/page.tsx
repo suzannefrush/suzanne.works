@@ -75,7 +75,7 @@ export default function WorkPage() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-none">
           Products<br />Shipped
         </h1>
-        
+                <a
           href="https://img1.wsimg.com/blobby/go/f6527eb1-70fb-4759-8246-76f1eae78782/downloads/SuzanneFrushResume0222.pdf?ver=1740516433361"
           target="_blank"
           rel="noopener noreferrer"
