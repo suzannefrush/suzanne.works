@@ -1,7 +1,5 @@
 import { ArrowUpRight, Download } from "lucide-react";
 
-import { ArrowUpRight, Download } from "lucide-react";
-
 const products = [
   { title: "Braze: Native WhatsApp Channel", description: "Recently announced as of March 2023...", cta: "What's up with WhatsApp?!", link: "https://www.braze.com/resources/articles/braze-announces-native-support-for-whatsapp", image: "/brazewhatsapp.png" },
   { title: "ALICE Housekeeping", description: "Launched in 2020...", cta: "Tell Me More!", link: "https://www.aliceplatform.com/blog/tag/alice-housekeeping", image: "/ALICEhskp.png" },
