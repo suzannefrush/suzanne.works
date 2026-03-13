@@ -12,7 +12,7 @@ const navigation = [
   { name: "Contact", href: "/contact" },
   { name: "Work", href: "/work" },
   { name: "Play", href: "#" },
-  { name: "Thoughts & Recs", href: "#" },
+  { name: "Thoughts & Recs", href: "/thoughts-recs" },
 ];
 
 export default function Header() {
