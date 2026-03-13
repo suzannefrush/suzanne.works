@@ -3,10 +3,10 @@ import { ArrowUpRight, Download } from "lucide-react";
 import { ArrowUpRight, Download } from "lucide-react";
 
 const products = [
-  { title: "Braze: Native WhatsApp Channel", description: "Recently announced as of March 2023, WhatsApp has been added in Braze's suite of omnichannel customer engagement tools.", cta: "What's up with WhatsApp?!", link: "https://www.braze.com/resources/articles/braze-announces-native-support-for-whatsapp", image: "/placeholder.svg" },
-  { title: "ALICE Housekeeping", description: "Launched in 2020, and led this product through the craziness of COVID (including all of our customers completely shutting down), ALICE Housekeeping was the last piece of the operations puzzle.", cta: "Tell Me More!", link: "https://www.aliceplatform.com/blog/tag/alice-housekeeping", image: "/placeholder.svg" },
-  { title: "Non Profit Websites", description: "With the help of the amazing organization 48in48, I led a team that within 48 hours had completely redesigned 2 nonprofit websites, starting from practically nothing.", cta: "See the Original", link: "https://web.archive.org/web/20161005174734/http://nassauperformingarts.org/", image: "/placeholder.svg" },
-  { title: "Interactive Classroom", description: "Lingo Live's first proprietary classroom was launched and iterated with my support and guidance. Within the first month of release, we had 31% of users voluntarily switch from other video platforms.", cta: "Read About It", link: "https://www.lingolive.com/lingo-live-unveils-interactive-classroom/", image: "/placeholder.svg" },
+  { title: "Braze: Native WhatsApp Channel", description: "Recently announced as of March 2023...", cta: "What's up with WhatsApp?!", link: "https://www.braze.com/resources/articles/braze-announces-native-support-for-whatsapp", image: "/brazewhatsapp.png" },
+  { title: "ALICE Housekeeping", description: "Launched in 2020...", cta: "Tell Me More!", link: "https://www.aliceplatform.com/blog/tag/alice-housekeeping", image: "/ALICEhskp.png" },
+  { title: "Non Profit Websites", description: "With the help of the amazing organization 48in48...", cta: "See the Original", link: "https://web.archive.org/web/20161005174734/http://nassauperformingarts.org/", image: "/NTMAHome.gif" },
+  { title: "Interactive Classroom", description: "Lingo Live's first proprietary classroom...", cta: "Read About It", link: "https://www.lingolive.com/lingo-live-unveils-interactive-classroom/", image: "/Enteringtheclassroom.gif" },
 ];
 
 const awards = [
