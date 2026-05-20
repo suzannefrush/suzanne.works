@@ -1,11 +1,8 @@
-"use client";
-
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTripBySlug, type Item, type Resource } from "@/lib/travel-data";
 import {
   ArrowLeft,
-  Share2,
   MapPin,
   ExternalLink,
   Map as MapIcon,
@@ -13,6 +10,7 @@ import {
   Music,
   Link as LinkIcon,
 } from "lucide-react";
+import ShareButton from "./ShareButton";
 
 // Inline Badge — no shadcn dependency needed
 const Badge = ({
@@ -91,20 +89,17 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
   );
 };
 
-export default function TripDetailPage({
+export default async function TripDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const trip = getTripBySlug(params.slug);
+  const { slug } = await params;
+  const trip = getTripBySlug(slug);
 
   if (!trip) {
     notFound();
   }
-
-  const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
-  };
 
   const allItems: TaggedItem[] = [
     ...trip.highlights.map((r) => ({ ...r, category: "Can't Miss" as const })),
@@ -160,13 +155,7 @@ export default function TripDetailPage({
             <ArrowLeft className="w-4 h-4" />
             Back to atlas
           </Link>
-          <button
-            onClick={handleShare}
-            className="flex items-center gap-2 px-4 py-2 border border-border rounded-md text-sm hover:bg-accent transition-colors"
-          >
-            <Share2 className="w-4 h-4" />
-            Share this trip
-          </button>
+          <ShareButton />
         </div>
 
         {/* Intro */}
