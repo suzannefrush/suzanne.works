@@ -31,7 +31,7 @@ const hotspots = [
     icon: Mail,
     label: "Contact",
     description: "Let's connect",
-    path: "/(site)/contact",
+    path: "/contact",
     position: "right-[8%] top-[60%]",
     animation: "animate-float-delayed-3",
   },
